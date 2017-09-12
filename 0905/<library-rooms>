@@ -1,0 +1,24 @@
+<html>
+	<food>
+	<maindish>
+		<meat>
+			<pork>
+			<beef>
+		</meat>
+		<Korean>
+			<bibimbap>
+			<koreanbbq>
+		</Korean>
+		<Japanese>
+			<sushi>
+			<uni-udon>
+			<tempura>
+		</Japanese>
+	</maindish>
+	<sidedish>
+		<Korean>
+			<radish-kimchi>
+			<fried-spinich>
+		</central-branch>
+	</sidedish>
+</food>
