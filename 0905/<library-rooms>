@@ -1,0 +1,22 @@
+<Food>
+	<maindish>
+		<korean>
+			<koreanbbq>
+			<bibimbap>
+		</korean>
+		<japanese>
+			<sushi>
+			<tempura>
+		</japanese>
+		<chinese>
+			<generalchoskitchen>
+			<noodle>
+		</chinese>
+	</maindish>
+	<sidedish>
+		<korean>
+			<kimchi>
+			<friedspinich>
+		</korean>
+	</sidedish>
+</food>
