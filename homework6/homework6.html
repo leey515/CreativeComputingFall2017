@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+    </head>
+    <body >
+
+
+        <script>
+            var source = "Three little birds sat on my window And they told me I don't need to worry Summer came like cinnamon, so sweet Little girls, double-dutch on the concrete Maybe sometimes we got it wrong, but it's all right The more things seems to change, the more they stay the same Ooo, don't you hesitate Girl, put your records on, tell me your favorite song You go ahead, let your hair down Sapphire and faded jeans I hope you get your dreams Just go ahead, let your hair down You're gonna find yourself somewhere, somehow Blue as the sky, sunburnt and lonely Sipping tea in the bar by the road side (Just relax, just relax) Don't you let those other boys fool you Gotta love that Afro hairdo Maybe sometimes we feel afraid, but it's all right The more you stay the same, the more they seem to change Don't you think it's strange? Girl, put your records on, tell me your favorite song You go ahead, let your hair down Sapphire and faded jeans I hope you get your dreams Just go ahead, let your hair down You're gonna find yourself somewhere, somehow Just more than I could take Pity for pity's sake Some nights kept me awake I thought that I was stronger When you gonna realize that you don't even have to try any longer? Do what you want to Girl, put your records on, tell me your favorite song You go ahead, let your hair down Sapphire and faded jeans I hope you get your dreams Just go ahead, let your hair down Girl, put your records on, tell me your favorite song You go ahead, let your hair down Sapphire and faded jeans I hope you get your dreams Just go ahead, let your hair down Ooo, you're gonna find yourself somewhere, somehow ";
+
+
+            var dictionary ={};
+            var ngrams = []; 
+            var ngramlength = 4; 
+
+            for(var i = 0; i< source.length-ngramlength; i += ngramlength){
+                var ngram = source.substring(i, i+ngramlength);
+                var next = source.substring(i+ngramlength, i+ngramlength*2);
+                //console.log(ngram, next);
+                if(dictionary[ngram] ==undefined){
+                    dictionary[ngram] = [];
+                }
+                dictionary[ngram].push(next);
+
+
+
+                ngrams.push(ngram);
+            }
+            // console.log(dictionary);
+            //console.log(ngrams);
+            var final = "";
+
+            for(var i = 0; i < ngrams.length; i++)
+            {
+                var startword = ngrams[Math.floor(Math.random()*ngrams.length)]; 
+                //console.log(startword);
+
+                final += startword;
+                //console.log(final);
+                //console.log(phrase);//
+
+                var nextArray = dictionary[startword];
+
+                //console.log(nextArray);
+
+                var nextword = nextArray[Math.floor(Math.random()*nextArray.length)];
+
+                final += nextword;
+
+                if(i%3 == 0)
+                {
+                    final += "\n";
+                }
+                if(i%9 == 0)
+                {
+                    final += "\n";
+                }
+
+
+            }
+
+
+
+            console.log(final);
+
+            //console.log(phrase);
+            // var whatisthis = dictionary[startword];
+            // console.log(startword);
+            // console.log(whatisthis)
+
+        </script>
+
+    </body>
+</html>
