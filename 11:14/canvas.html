@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+html,body{
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+	</style>
+</head>
+<body>
+	<canvas id="myCanvas"></canvas>
+<script>
+	
+var canvas = document.getElementById("myCanvas");
+
+canvas.width = window.innerWidth; 
+canvas.height = window. innerHeight;
+
+var context = canvas.getContext("2d")
+
+var x = window.innerWidth / 2;
+var y = window.innerHeight / 2;
+context.moveTo(x,y);
+
+var step = 50;
+
+function loop(){
+	x = x + (Math.random()-0.5)*step;
+	y = y + (Math.random()-0.5)*step;
+	if(x > window.innerWidth){
+		x = window.innerWidth;
+	}
+	if(y > window.innerHeight){
+		y = window.innerHeight;
+	}
+	if (x < 0) {x = 0;}
+	if (y < 0) {y = 0;}
+	context.lineTo(x,y);
+	context.stroke();
+}
+
+// setInterval(loop,1000)
+// // what is the delay between frames (ms)
+// // milliseconds
+
+setInterval(loop, 1000/60)
+
+</script>
+
+</body>
+</html>
