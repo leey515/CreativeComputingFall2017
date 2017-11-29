@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html, body{
+	width: 100%;
+	height:100%;
+	margin:0%;
+	}
+	body{
+		display: flex;
+		justify-content: center;
+		/*align-items: center;*/
+	}
+	h1{
+		font-size: 7vmin;
+	}
+</style>
+</head>
+<body>
+<h1 id="result"></h1>
+<script>
+
+var string = "";
+
+var counter = 0;
+while(counter <10){
+	var rand ;
+	if(rand < 0.5){
+		string = string + "heads";
+	}
+	else{
+		string += "tails";
+	}
+	string += "<br>"
+	counter = counter +1;
+}
+
+document.getElementById("result").innerHTML = string
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

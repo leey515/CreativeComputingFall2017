@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+
+var aNumber = 5;
+console.log(aNumber);		
+
+var aString = "5";
+console.log(aString);
+
+var aBool = true;
+console.log(aBool);
+
+var anArray = [ aNumber, aString, aBool ];
+console.log(anArray);
+console.log(anArray[2]);
+
+var anObject = {
+	"number" : aNumber,
+	"String" : aString,
+	"success" : aBool
+}
+console.log(anObject);
+console.log(anObject.success);
+console.log(anObject["success"]);
+
+var afunction = function(argument){
+	console.log("hello " + argument);
+}
+
+afunction("yooan");
+afunction("joyce");
+
+</script>
+
+</body>
+</html>

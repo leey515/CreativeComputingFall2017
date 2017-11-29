@@ -1,0 +1,69 @@
+#third{
+    position: absolute;
+    top:80px;
+    left: 400px;
+    height: 600px;
+    width: 250px;
+    background-color: darkorange;
+    opacity: 0.7;
+    
+}
+
+#first{
+    position: absolute;
+    height: 100px;
+    width: 350px;
+    top: 150px;
+    left: 250px;
+    background-color: beige;
+    opacity: 0.7;
+    z-index: 3;
+    animation: firstanimation 4s 2s infinite;
+}
+
+@keyframes firstanimation {
+    0% {background-color: beige; left: 250px; top: 150px; }
+    50% {background-color:coral; border-color: coral; left: 125px; top: 150px; }
+    100% {background-color: beige; left: 250px; top: 150px; }
+}
+
+#second{position: absolute;
+    height: 100px;
+    width: 350px;
+    top: 300px;
+    left: 250px;
+    background-color: beige;
+    opacity: 0.7;
+    z-index: 3;
+    animation: secondanimation 4s 2s infinite
+}
+
+@keyframes secondanimation {
+    0% {background-color: beige; left: 250px; top: 300px; }
+    50% {background-color:coral; border-color: coral; left: 375px; top: 300px; }
+    100% {background-color: beige; left: 250px; top: 300px; }
+
+#forth{
+    position: absolute;
+    height: 100px;
+    width: 350px;
+    top: 450px;
+    left: 250px;
+    background-color: beige;
+    opacity: 0.7;
+    z-index: 3;
+    animation: thirdanimation 4s 2s infinite;
+}
+
+@keyframes thirdanimation {
+    0% {background-color: beige; left: 250px; top: 450px; }
+    50% {background-color:coral; border-color: coral; left: 125px; top: 450px; }
+    100% {background-color: beige; left: 250px; top: 450px; }
+
+
+
+
+
+body{
+    background-color: silver;
+}
