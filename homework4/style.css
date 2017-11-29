@@ -42,6 +42,7 @@
     0% {background-color: beige; left: 250px; top: 300px; }
     50% {background-color:coral; border-color: coral; left: 375px; top: 300px; }
     100% {background-color: beige; left: 250px; top: 300px; }
+}
 
 #forth{
     position: absolute;
@@ -59,6 +60,7 @@
     0% {background-color: beige; left: 250px; top: 450px; }
     50% {background-color:coral; border-color: coral; left: 125px; top: 450px; }
     100% {background-color: beige; left: 250px; top: 450px; }
+}
 
 
 
