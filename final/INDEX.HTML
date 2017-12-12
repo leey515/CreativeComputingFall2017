@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>YOOAN</title>
+        <link rel="stylesheet" href="styles.css">        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid" id = "navbarBack">
+                <!-- Home and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Home</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a id = "aboutNav" href="#about">About </a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#pictures">Pictures of mine</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+        <div id = "home">
+            <div id = "homecontent">
+                <div class = "space"> </div>
+                <h1> HI, MY NAME IS YOOAN LEE.</h1>
+                <p>A STUDENT</p>
+                <img id="moon" src="moon.gif">
+                <img id="cat" src="cat.gif">
+            </div>
+        </div>
+
+        <div id = "about">
+            <div class = "space"> </div>
+            <h2>MY STORY</h2>
+            <p>ThIS IS MY STORY.</p>
+        </div>
+
+        <div id = "projects">
+            <div class = "space"> </div>
+            <h3>MY PROJECTs</h3>
+
+            <p><button><a class= "homework" href = "homework1/%3Clibrary-rooms%3E.html">project1</a></button></p>
+            <p><button><a class= "homework" href = "homework2/1.html">project2</a></button></p>
+            <p><button><a class= "homework" href = "homework3/1.html">project3</a></button></p>
+            <p><button><a class= "homework" href = "homework4/index.html">project4</a></button></p>
+            <p><button><a class= "homework" href = "homework5/homework5.html">project5</a></button></p>
+            <p><button><a class= "homework" href = "homework6/homework6.html">project6</a></button></p>
+            <p><button><a class= "homework" href = "homework7/tv.html">project7</a></button></p>
+
+        </div>
+
+
+        <div id = "pictures">
+            <div class = "space"> </div>
+            <h4>PICTURES OF MINE</h4>
+            <p>PICTURES</p>
+            <div class="row">
+                <div class="column">
+                    <img src="img1.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+                </div>
+            </div>
+
+            <div id="myModal" class="modal">
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 4</div>
+                        <img src="img1.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 4</div>
+                        <img src="img2.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">3 / 4</div>
+                        <img src="img3.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">4 / 4</div>
+                        <img src="img4.jpg" style="width:100%">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    <div class="caption-container">
+                        <p id="caption"></p>
+                    </div>
+
+                    <div class="column">
+                        <img class="demo" src="img1.jpg" onclick="currentSlide(1)" alt="Nature">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo" src="img2.jpg" onclick="currentSlide(2)" alt="Trolltunga">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo" src="img3.jpg" onclick="currentSlide(3)" alt="Mountains">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo" src="img4.jpg" onclick="currentSlide(4)" alt="Lights">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script>
+            function openModal() {
+                document.getElementById('myModal').style.display = "block";
+            }
+
+            function closeModal() {
+                document.getElementById('myModal').style.display = "none";
+            }
+
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("demo");
+                var captionText = document.getElementById("caption");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+                captionText.innerHTML = dots[slideIndex-1].alt;
+            }
+        </script>
+    </body>
+</html>

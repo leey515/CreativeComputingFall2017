@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+html,body{
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+	</style>
+</head>
+<body>
+<img style="display:none;" id="map-image" src="https://upload.wikimedia.org/wikipedia/commons/8/83/Equirectangular_projection_SW.jpg">
+<canvas id="myCanvas"></canvas>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<script>
+	
+var url = "https://raw.githubusercontent.com/robbykraft/Parsons/master/class.json";
+
+var canvas = document.getElementById("myCanvas");
+
+// canvas.width = window.innerWidth; 
+// canvas.height = window. innerHeight;
+canvas.width = 1000;
+canvas.height = 5000;
+
+var context = canvas.getContext("2d")
+
+var nyLat = (-40.75+90)/180*1000;
+var nyLon = (-74+180)/360*500;
+
+window.onload = function(){
+	var img = document.getElementById("map-image");
+	context.drawImage(img,0,0,1000,500);
+}
+
+$.getJSON(url, function(data){
+	for(key in data){
+		context.moveTo(nyLat, nyLon);
+		var lat = -data[key].lat;
+		var lon = data[key].lon;
+		lat += 90;
+		lon += 180;
+		lat /= 180.0;
+		lon /= 360.0;
+		lat *= 500;
+		lon *= 1000;
+		context.lineTo(lon, lat);
+		context.stroke();
+	}
+});
+
+
+</script>
+
+</body>
+</html>
