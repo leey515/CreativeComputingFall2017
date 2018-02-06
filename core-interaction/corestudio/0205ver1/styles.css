@@ -1,0 +1,48 @@
+.coverpage{
+    text-align: center;
+    background-color: lightpink;
+    color: white;
+    padding-top: 30px;
+    font-family: cursive;
+}
+.first{
+     text-align: center;
+    background-color: lightpink;
+    color: white;
+    padding-top: 30px;
+    font-family: cursive;
+}
+}
+h1{
+    font-size: 50px;
+}
+h4{
+    font-size: 30px;
+}
+
+.right{
+    padding-left: 100vh;
+}
+.left{
+    padding-right: 100vh;
+}
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+
+.reading{
+  
+    padding-left: 50vh;
+    padding-right: 50vh;
+    font-size: 10px;
+
+}
+
