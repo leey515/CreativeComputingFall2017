@@ -37,13 +37,13 @@ html,body {
 .button {
     font: bold 100px Arial;
     text-decoration:none;
-    background-color: #EEEEEE;
+    background-color: #000000;
     color: #333333;
     padding: 2px 4px 2px 4px;
-    border-top: 1px solid #CCCCCC;
-    border-right: 1px solid #333333;
-    border-bottom: 1px solid #333333;
-    border-left: 1px solid #CCCCCC;
+    border-top: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #000000;
 }
 
 .reading{

@@ -29,13 +29,13 @@ h4{
 .button {
   font: bold 11px Arial;
   text-decoration: none;
-  background-color: #EEEEEE;
-  color: #333333;
+  background-color: #ffb3cc;
+  color: #ff0055;
   padding: 2px 6px 2px 6px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
+  border-top: 1px solid #ffb3cc;
+  border-right: 1px solid #ffb3cc;
+  border-bottom: 1px solid #ffb3cc;
+  border-left: 1px solid #ffb3cc;
 }
 
 .reading{
@@ -44,5 +44,15 @@ h4{
     padding-right: 50vh;
     font-size: 10px;
 
+}
+
+a{
+    font-family:sans-serif;
+    text-align: center;
+    color: white;
+    padding-top: 100vh;
+    padding-right: 500px
+    
+    
 }
 
