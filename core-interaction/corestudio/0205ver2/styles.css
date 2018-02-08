@@ -1,6 +1,6 @@
 html,body {
     height: 100%;
-    
+
 }
 .coverpage{
     text-align: center;
@@ -50,6 +50,7 @@ html,body {
     padding-left: 50vh;
     padding-right: 50vh;
     font-size: 20px;
+    text-align: justify;
 }
 
 a{
@@ -57,7 +58,11 @@ a{
     text-align: center;
     color: white;
     padding-top: 100vh;
-    padding-right: 500px
-    
-    
+    padding-right: 500px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+
 }
+
+

@@ -27,7 +27,7 @@ h4{
     padding-right: 100vh;
 }
 .button {
-  font: bold 11px Arial;
+  font: bold 20px Arial;
   text-decoration: none;
   background-color: #ffb3cc;
   color: #ff0055;
@@ -40,19 +40,24 @@ h4{
 
 .reading{
   
-    padding-left: 50vh;
-    padding-right: 50vh;
-    font-size: 10px;
+    font-size: 15px;
+    background-color: #ff9999;
+    margin-left: 50vh;
+    margin-right: 50vh;
 
 }
 
 a{
     font-family:sans-serif;
     text-align: center;
-    color: white;
+    color: aquamarine;
     padding-top: 100vh;
-    padding-right: 500px
+    padding-right: 500px;
+    text-decoration: none;
     
-    
+}
+
+.textsource{
+    font-size: 20px;
 }
 
