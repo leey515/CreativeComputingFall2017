@@ -4,7 +4,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">   
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -20,26 +22,36 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Gjja</a>
+                    <a class="navbar-brand" href="random.html">Choice for Me</a>
                 </div>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
+                   <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">TYPE <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
+                                <li><a href="korean.html">Korean</a></li>
+                                <li><a href="japanese.html">Japenese</a></li>
+                                <li><a href="chinese.html">Chinese</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
+                                <li><a href="etc.html">Etc</a></li>
+                                <li><a href="dessert.html">Dessert</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">LOCATION</a></li>
-                        <li><a href="#">DISTANCE</a></li>
-                        <li><a href="#">PHOTOS</a></li>
-                        <li><a href="#">LIST</a></li>
+                           <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">LOCATION <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="location.html">location1</a></li>
+                                <li><a href="location2.html">location2</a></li>
+                                <li><a href="location3.html">location3</a></li>
+                                <li><a href="location4.html">location4</a></li>
+                                <li><a href="location5.html">location5</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="distance.html">SEARCH</a></li>
+                        <li><a href="photos.html">PHOTOS</a></li>
+                        <li><a href="list.html">LIST</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -47,50 +59,103 @@
 
         <!-- 메뉴바       -->
 
-        <h2 style="text-align:center">collection</h2>
 
 
-        <div class="row">
-            <div class="column">
-                <img src="1.gif" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+
+
+
+
+        <h2 style="text-align:center">Food Collection</h2>
+
+
+
+        <div class="middle">
+            <div class="row">         <!-- row1     -->
+                
+                <div class="column">
+                    <img id="chinese" class="originimage" src="/image/2.png" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                </div>
+                
             </div>
-            <div class="column">
-                <img src="1.gif" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+
+
+
+
+
+
+            <div class="row">    <!-- row2     -->
+               
             </div>
-            <div class="column">
-                <img src="1.gif" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+
+
+
+
+            <div class="row">  <!-- row3     -->
+               
             </div>
-            <div class="column">
-                <img src="1.gif" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+
+
+
+            <div class="row">    <!-- row4     -->
+                
             </div>
-            <div class="column">
-                <img src="1.gif" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+
+
+
+
+            <div class="row">    <!-- row5     -->
+               
             </div>
+
+
+
+            <div class="row">    <!-- row6     -->
+               
+            </div>
+
         </div>
 
+
+
         <div id="myModal" class="modal">
-            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <span class="ex cursor" onclick="closeModal()">&times;</span>
             <div class="modal-content">
 
-                <div class="mySlides">
-                    <div class="numbertext">1 / 4</div>
-                    <img src="2.gif" style="width:100%">
-                </div>
+
+
+                <!-- ro1    -->
+              
 
                 <div class="mySlides">
-                    <div class="numbertext">2 / 4</div>
-                    <img src="2.gif" style="width:100%">
+                    <div class="numbertext">2 / 36</div>
+                    <img class="clickedPic" src="/picture/2.png" style="width:100%">
                 </div>
 
-                <div class="mySlides">
-                    <div class="numbertext">3 / 4</div>
-                    <img src="2.gif" style="width:100%">
-                </div>
+              
 
-                <div class="mySlides">
-                    <div class="numbertext">4 / 4</div>
-                    <img src="2.gif" style="width:100%">
-                </div>
+
+
+
+                <!-- ro2    -->
+               
+
+
+
+                <!-- ro3    -->
+               
+
+
+
+                <!-- ro4    -->
+               
+
+                <!-- ro5    -->
+               
+
+
+                <!-- ro6    -->
+               
+
 
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -98,24 +163,19 @@
                 <div class="caption-container">
                     <p id="caption"></p>
                 </div>
-
-
-                <div class="column">
-                    <img class="demo cursor" src="img_nature_wide.jpg" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
-                </div>
-                <div class="column">
-                    <img class="demo cursor" src="img_fjords_wide.jpg" style="width:100%" onclick="currentSlide(2)" alt="Trolltunga, Norway">
-                </div>
-                <div class="column">
-                    <img class="demo cursor" src="img_mountains_wide.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-                </div>
-                <div class="column">
-                    <img class="demo cursor" src="img_lights_wide.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-                </div>
             </div>
         </div>
 
+           <a href="random.html" class="btn btn-warning">Random</a>
+
+        
+        
+        
         <script>
+
+           
+            
+            
             function openModal() {
                 document.getElementById('myModal').style.display = "block";
             }
@@ -149,7 +209,7 @@
                     dots[i].className = dots[i].className.replace(" active", "");
                 }
                 slides[slideIndex-1].style.display = "block";
-                dots[slideIndex-1].className += " active";
+                dots[slideIndex-1].className += "active";
                 captionText.innerHTML = dots[slideIndex-1].alt;
             }
         </script>
