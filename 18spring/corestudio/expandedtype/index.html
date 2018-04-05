@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="coat0">
+       <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">menu
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="youtube.html">musicvideo</a></li>
+    </ul>
+  </div>
+            </div>
+                
+<audio id="myAudio">
+  <source src="sound.mp3" type="audio/ogg">
+  <source src="sound.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+<div class="playa">
+<button class="play" onclick="playAudio()" type="button">Play</button>
+<button class="play" onclick="pauseAudio()" type="button">Pause</button> 
+    </div>
+        
+
+        <div class="overlay"></div>
+        
+        <div class="coat">
+            <div class="bluebox" style="opacity: 0.7"></div>
+            <div class="pinkbox" style="opacity: 0.7"></div>
+            <div class="purplebox">
+                <p id="sipping" style="opacity: 0.8;white-space: pre">
+For sure
+
+There's no one else here around me
+Sinking my feet in the sand
+I'll be right here on this island
+I hope that you understand
+
+Ooh yeah
+I'm feeling it I'm feeling it
+Ooh yeah
+Come to me quick come to me quick
+
+I just wanna go where love is alive
+Love is alive love is alive
+I just wanna go where love is alive
+Love is alive love is alive
+
+Love is alive when you don't have to prove it
+Unafraid, there's no way to lose it
+Oh I just wanna go where love is aliveㅍ
+So I'm gonna do that
+
+I just wanna go where love is alive
+I just wanna go where love is alive
+
+All of the chaos surrenders
+Changing the currents and tide
+The water can keep getting deeper
+Cause I'll be right here staying dry
+
+Ooh yeah
+I'm feeling it I'm feeling it
+Ooh yeah
+Come to me quick come to me quick
+
+I just wanna go where love is alive, 
+love is alive, love is alive
+I just wanna go where love is alive, 
+love is alive, love is alive
+
+Love is alive when you don't have to prove it
+Unafraid, there's no way to lose it
+Oh I just wanna go where love is alive
+So I'm gonna do that
+
+I just wanna go where love is alive, 
+love is alive, love is alive
+I just wanna go where love is alive, 
+love is alive, love is alive
+
+Love is alive when you don't have to prove it
+Unafraid, there's no way to lose it
+Oh I just wanna go where love is alive
+
+I just wanna go where love is alive
+I just wanna go where love is alive
+So I'm gonna do that
+
+Ooh yeah
+I'm feeling it, I'm feeling it
+Ooh yeah
+Come to me quick, come to me quick
+Ooh yeah
+Ooh yeah
+
+I just wanna go where love is alive, 
+love is alive, love is alive
+I just wanna go where love is alive, 
+love is alive, love is alive
+
+Love is alive when you don't have to prove it
+Unafraid, there's no way to lose it
+Oh I just wanna go where love is alive
+So I'm gonna do that
+                </p>
+            </div>
+        </div>
+        
+        <div class="coat2">
+            <div class="bowlCoat">
+        <button class="vowels" onclick="highlight('a')">a</button>
+        <button class="vowels" onclick="highlight('e')">e</button>
+        <button class="vowels" onclick="highlight('i')">i</button>
+        <button class="vowels" onclick="highlight('o')">o</button>
+        <button class="vowels" onclick="highlight('u')">u</button>
+            </div>
+        </div>
+     
+
+        
+        
+        <audio src="ah1.wav" type="audio/mpeg"></audio> <!--요기서부터가 0번-->
+        <audio src="ah2.wav" type="audio/mpeg"></audio> 
+        <audio src="ah3.wav" type="audio/mpeg"></audio> 
+        <audio src="ah4.wav" type="audio/mpeg"></audio> 
+        <audio src="ah5.wav" type="audio/mpeg"></audio> 
+        <!--요기가 파일들 지정. A 부터 2개씩 한다했을경우. 더필요하시면 카피페이스트해서 늘리세요-->
+
+        <audio src="eh1.wav" type="audio/mpeg"></audio>
+        <audio src="eh2.mp3" type="audio/mpeg"></audio>
+        <audio src="eh3.wav" type="audio/mpeg"></audio>
+        <audio src="eh4.wav" type="audio/mpeg"></audio>
+        <audio src="eh5.wav" type="audio/mpeg"></audio>
+        <audio src="eh6.wav" type="audio/mpeg"></audio>
+        
+        <audio src="i1.wav" type="audio/mpeg"></audio>
+        <audio src="i2.wav" type="audio/mpeg"></audio>
+        <audio src="i3.wav" type="audio/mpeg"></audio>
+        <audio src="i4.wav" type="audio/mpeg"></audio>
+        <audio src="i5.wav" type="audio/mpeg"></audio>
+        <audio src="i6.wav" type="audio/mpeg"></audio>
+        
+       <audio src="oh1.wav" type="audio/mpeg"></audio>
+        <audio src="oh2.wav" type="audio/mpeg"></audio>
+        <audio src="oh3.wav" type="audio/mpeg"></audio>
+        <audio src="oh4.wav" type="audio/mpeg"></audio>
+        <audio src="oh5.wav" type="audio/mpeg"></audio>
+        <audio src="oh6.wav" type="audio/mpeg"></audio>
+        
+       <audio src="u1.wav" type="audio/mpeg"></audio>
+        <audio src="u2.wav" type="audio/mpeg"></audio>
+        <audio src="u3.wav" type="audio/mpeg"></audio>
+        <audio src="u4.wav" type="audio/mpeg"></audio>
+        <audio src="u5.wav" type="audio/mpeg"></audio>
+        <audio src="u6.wav" type="audio/mpeg"></audio> <!--요기까지가 9번-->
+        
+        <script>       
+            var letterChosen;
+            function highlight(letter){
+                window.letterChosen = letter;
+                var para = document.getElementById('sipping');
+                console.log("hi");
+                var paragraph = para.textContent;
+                var result = "";
+                for( i = 0; i < paragraph.length; i++)
+                {
+                    if(paragraph.charAt(i)==letter)
+                        result += "<span class = 'highlight' onmouseover='playsound" + letter + "()'>" + paragraph.charAt(i) + "</span>";
+                    else
+                        result += paragraph.charAt(i);
+                }
+                document.getElementById('sipping').innerHTML = result;
+            }
+
+            function playsounda(){
+                var rand = Math.floor(Math.random()*5);//오디오 파일 열개중 0,1 번이 a 관련오디오면 둘중하나고르는거.만약 파일이 2개이상이면 *숫자 올리면 되여
+                console.log(rand);
+                var audio = document.getElementsByTagName("audio")[rand];
+                audio.play();
+            }
+            function playsounde(){
+                var rand = Math.floor(Math.random()*6)+5;//여기는 2,3번이 e 관련일경우. 2,3,4 면 *3)+2 
+                var audio = document.getElementsByTagName("audio")[rand];
+                audio.play();
+            }
+            function playsoundi(){
+                var rand = Math.floor(Math.random()*6)+11;
+                var audio = document.getElementsByTagName("audio")[rand];
+                audio.play();
+            }
+            function playsoundo(){
+                var rand = Math.floor(Math.random()*6)+17;
+                var audio = document.getElementsByTagName("audio")[rand];
+                audio.play();
+            } function playsoundu(){
+                var rand = Math.floor(Math.random()*6)+23;
+                var audio = document.getElementsByTagName("audio")[rand];
+                audio.play();
+            }
+            
+            var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+    x.play(); 
+} 
+
+function pauseAudio() { 
+    x.pause(); 
+} 
+            
+
+        </script>
+
+    </body>
+</html>
