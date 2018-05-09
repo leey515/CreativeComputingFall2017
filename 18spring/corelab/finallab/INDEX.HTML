@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>YOOAN</title>
+        <link rel="stylesheet" href="styles.css">        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid" id = "navbarBack">
+                <!-- Home and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Home</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+        <div id = "home">
+            <div id = "homecontent">
+                <div class = "space"> </div>
+                <h1>YOOAN LEE's 2018Spring PROJECTS</h1>
+
+            </div>
+        </div>
+
+
+
+        <div id = "projects">
+            <div class = "space"> </div>
+            <h3>MY PROJECTs</h3>
+
+            <div id="top" onclick="changeButton()">
+                <p><button><a class= "homework" >CoreLab</a></button></p>
+            </div>
+
+
+
+
+            <div id="bottom">
+                <p><button><a class= "homework" href = "corelab/0328lab/0328lab.html">0328lab</a></button></p>
+                <p><button><a class= "homework" href = "corelab/0418hw/index.html">0418hw</a></button></p>
+                <p><button><a class= "homework" href = "corelab/022118hw/index.html">022118hw</a></button></p>
+                <p><button><a class= "homework" href = "corelab/firstdaycorelab/index.html">firstday-corelab</a></button></p>
+                <p><button><a class= "homework" href = "corelab/seconddaycorelab/index.html">secondday-corelab</a></button></p>
+            </div>
+
+            <div id="top2" onclick="changeButton2()">
+                <p><button><a class= "homework" >CoreStudio</a></button></p>
+            </div>
+
+            <div id="bottom2">
+                <p><button><a class= "homework" href = "corestudio/0205ver1/index.html">0205ver1</a></button></p>
+                <p><button><a class= "homework" href = "corestudio/0205ver2/index.html">0205ver2</a></button></p>
+                <p><button><a class= "homework" href = "corestudio/collectionfinal/index.html">collectionfinal</a></button></p>
+                <p><button><a class= "homework" href = "corestudio/expandedtype/index.html">expandedtype</a></button></p>
+                <p><button><a class= "homework" href = "corestudio/expandedtypesketch/index.html">expandedtypesketch</a></button></p>
+                <p><button><a class= "homework" href = "corestudio/ORRR/index.html">ORRR</a></button></p>
+                <p><button><a class= "homework" href = "corestudio/finalsample/index.html">finalsample</a></button></p>
+                <p><button><a class= "homework" href = "corestudio/final/index.html">final</a></button></p>
+            </div>
+
+        </div>
+
+
+        <script>
+            function changeButton(){
+                var top= document.getElementById("top");
+                top.style.display = "none";
+                var bottom = document.getElementById("bottom");
+                bottom.style.display = "inline-grid";
+            }
+
+            function changeButton2(){
+                var top= document.getElementById("top2");
+                top.style.display = "none";
+                var bottom = document.getElementById("bottom2");
+                bottom.style.display = "inline-grid";
+            }
+        </script>
+    </body>
+
+
+</html>

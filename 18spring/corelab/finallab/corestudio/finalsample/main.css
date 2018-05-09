@@ -1,0 +1,11 @@
+#banwon{
+    position: fixed;
+    top: 80vh;
+    height: 30%;
+}
+#circle{
+    position: fixed;
+    top: 60vh;
+    height: 25%;
+    left: 8vw;
+}

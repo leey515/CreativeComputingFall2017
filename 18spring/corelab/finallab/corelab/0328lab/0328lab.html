@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #imgs{
+                width: 600px; margin: 0 auto;
+                height: 600px; margin: 0 auto;
+                padding-top:  25px;
+            }
+
+            .box{
+                width: 650px; margin: 0 auto;
+                height: 650px; margin: 0 auto;
+                background-color: black;
+            }
+
+            html{
+                text-align: center !important;
+                font-weight: bold;
+                font-family: sans-serif;
+                font-size: 100px;
+            }
+           
+        </style>
+    </head>
+
+
+    <body>
+
+       <div class= "box"><img id="imgs" src="1.gif"></div>
+        
+         
+       
+        <p2 id="daily">#Dailylife↑↓ </p2>
+        
+       
+        
+
+
+        <script>
+
+            var screen = document.getElementById("imgs")
+            var images = ["1.gif", "2.gif"],
+                counter = 0;
+            images[counter];	
+
+            document.body.addEventListener("keydown", function(event){console.log(event);
+
+                                                                      event = event || window.event;
+
+                                                                      if(event.key == "ArrowUp"){
+                                                                          counter++;
+                                                                      }
+                                                                      if(event.key == "ArrowDown"){
+                                                                          counter--;
+                                                                      }
+                                                                      if(counter == 2){
+                                                                          counter = 0;
+                                                                      }
+                                                                      if(counter == -1){
+                                                                          counter = 1;
+                                                                      }
+
+                                                                      document.getElementById("imgs").src = images[counter];
+
+
+                                                                     });
+
+
+
+
+
+        </script>
+
+
+
+    </body>
+</html>
