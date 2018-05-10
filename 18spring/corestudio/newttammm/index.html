@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--
+*  Copyright (c) 2015 The WebRTC project authors. All Rights Reserved.
+*
+*  Use of this source code is governed by a BSD-style license
+*  that can be found in the LICENSE file in the root of the source
+*  tree.
+-->
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="description" content="WebRTC code samples">
+        <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+        <meta itemprop="description" content="Client-side WebRTC code samples">
+        <meta itemprop="name" content="WebRTC code samples">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta id="theme-color" name="theme-color" content="#ffffff">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <base target="_blank">
+
+        <title>ttam</title>
+
+        <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="main.css">
+
+        <style>
+            input[type=file]{
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 16px 32px;
+                text-decoration: none;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 50%;
+            }
+            button {
+                margin: 0 3px 10px 0;
+                padding-left: 2px;
+                padding-right: 2px;
+                width: 99px;
+            }
+            #download{
+                display: none;
+            }
+
+            button:last-of-type {
+                margin: 0;
+            }
+
+            p.borderBelow {
+                margin: 0 0 20px 0;
+                padding: 0 0 20px 0;
+            }
+
+            video {
+                height: 232px;
+                margin: 0 12px 20px 0;
+                vertical-align: top;
+                width: calc(20em - 10px);
+            }
+
+
+            video:last-of-type {
+                margin: 0 0 20px 0;
+            }
+
+            video#gumVideo {
+                margin: 0 20px 20px 0;
+            }
+
+            @media screen and (max-width: 500px) {
+                button {
+                    font-size: 0.8em;
+                    width: calc(33% - 5px);
+                }
+            }
+
+            @media screen and (max-width: 720px) {
+                video {
+                    height: calc((50vw - 48px) * 3 / 4);
+                    margin: 0 10px 10px 0;
+                    width: calc(50vw - 48px);
+                }
+
+                video#gumVideo {
+                    margin: 0 10px 10px 0;
+                }
+            }
+
+            .down{
+                position: absolute;
+                top: 87%;
+                width: 55%;
+                left: 25%;
+                z-index: 10;
+            }
+            .up{
+                position: absolute;
+                top: 60%;
+                width: 55%;
+                left: 23%;
+                z-index: 10;
+                border-radius: 0%;
+                opacity: 100%;
+            }
+
+            img {
+                display: block;
+            }
+
+            .imgback{
+                position: fixed;
+                width: 104%;
+                z-index: -10;
+                right: 0.1%;
+                top: 11vh;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div id="container">
+            <video id="recorded" controls></video><!---player--->
+        </div>
+
+
+        <input type="file" accept="audio/*" capture id="recorder"> <!---recording-------->
+        <img id="down" class="down" src="banwon.png" onclick="sizeUp()">        
+        <img id="up" class="up" src="circle.png" onclick="toggleFlying(); start()">
+        <img id="upz" class="up" src="circle.png" onclick="toggleFlying(); start()">
+
+
+        <img id="imgback" class="imgback" src="background.jpg" alt="Pineapple">
+
+
+        <!-- include adapter for srcObject shim -->
+        <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+    <script>
+        var recorder = document.getElementById('recorder');
+        var player = document.getElementById('recorded');
+
+        recorder.addEventListener('change', function(e) {
+            var file = e.target.files[0];
+            // Do something with the audio file.
+            player.src = URL.createObjectURL(file);
+        });
+
+    </script>
+</html>

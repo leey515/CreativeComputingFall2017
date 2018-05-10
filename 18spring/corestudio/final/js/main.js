@@ -257,16 +257,16 @@ jQuery.fn.shake = function () {
             $(this).animate({
                 top: 40,
                 left:-6.5
-            }, 15).animate({
+            }, 110).animate({
                 top: 55,
                 left:-6.5
-            }, 35).animate({
+            }, 310).animate({
                 top: 55,
                 left:-6.5
-            }, 15).animate({
+            }, 110).animate({
                 top: 40,
                 left:-6.5
-            }, 35);
+            }, 310);
         }
     });
 
