@@ -119,16 +119,16 @@ jQuery.fn.shake = function () {
         for (var x = 1; x <= 99999; x++) {
             $(this).animate({
                 top: 10,
-                left:-6.5
+
             }, 15).animate({
                 top: 25,
-                left:-6.5
+       
             }, 35).animate({
                 top: 25,
-                left:-6.5
+               
             }, 15).animate({
                 top: 10,
-                left:-6.5
+               
             }, 35);
         }
     });
