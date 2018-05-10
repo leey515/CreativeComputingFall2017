@@ -1,0 +1,54 @@
+
+.up{
+    position: absolute;
+    top: 60%;
+    width: 55%;
+    left: 23%;
+    z-index: 10;
+    border-radius: 0%;
+    opacity: 100%;
+}
+
+img {
+    display: block;
+}
+
+.imgback{
+    position: fixed;
+    width: 104%;
+    z-index: -10;
+    right: 0.1%;
+    top: 11vh;
+}
+
+
+input[type='file'] {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: 10;
+    height: 45px;
+    width: 100%;
+    border-top-left-radius: 90px;
+    border-top-right-radius: 90px;
+    opacity:0;
+}
+
+.top {
+    position: absolute;
+    top: 100%;
+    left: 33%;
+    z-index: 10;
+    height: 55px;
+    width: 30%;
+    border-top-left-radius: 90px;
+    border-top-right-radius: 90px;
+    border: 1px solid #d8d8d8;
+    box-shadow: 1px 2px 3px #ededed;
+    background-color: red;
+}
+
+
+#recorded{
+    display: none;
+}
