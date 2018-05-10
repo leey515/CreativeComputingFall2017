@@ -162,7 +162,7 @@ var larged = false;
 function sizeUp() {
     var elem = document.getElementById("down");
     var pos = 100;
-    var size = 30;
+    var size = 31;
     var leftPos = 33;
     if(larged == false){
         var id = setInterval(frame, 5);

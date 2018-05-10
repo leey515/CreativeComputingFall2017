@@ -13,152 +13,15 @@
 
 /* globals MediaRecorder */
 
-var mediaSource = new MediaSource();
-mediaSource.addEventListener('sourceopen', handleSourceOpen, false);
-var mediaRecorder;
-var recordedBlobs;
-var sourceBuffer;
+var recorder = document.getElementById('recorder');
+var player = document.getElementById('recorded');
 
-var gumVideo = document.querySelector('video#gum');
-var recordedVideo = document.querySelector('video#recorded');
+recorder.addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    // Do something with the audio file.
+    player.src = URL.createObjectURL(file);
+});
 
-var ongoing = false;
-
-// window.isSecureContext could be used for Chrome
-var isSecureOrigin = location.protocol === 'https:' ||
-    location.hostname === 'localhost';
-
-var constraints = {
-    audio: true
-};
-
-function handleSuccess(stream) {
-    console.log('getUserMedia() got stream: ', stream);
-    window.stream = stream;
-    gumVideo.srcObject = stream;
-}
-
-function handleError(error) {
-    console.log('navigator.getUserMedia error: ', error);
-}
-
-navigator.mediaDevices.getUserMedia(constraints).
-then(handleSuccess).catch(handleError);
-
-function handleSourceOpen(event) {
-    console.log('MediaSource opened');
-    sourceBuffer = mediaSource.addSourceBuffer('video/webm; codecs="vp8"');
-    console.log('Source buffer: ', sourceBuffer);
-}
-
-recordedVideo.addEventListener('error', function(ev) {
-    console.error('MediaRecording.recordedMedia.error()');
-    alert('Your browser can not play\n\n' + recordedVideo.src
-          + '\n\n media clip. event: ' + JSON.stringify(ev));
-}, true);
-
-function handleDataAvailable(event) {
-    if (event.data && event.data.size > 0) {
-        recordedBlobs.push(event.data);
-    }
-}
-
-function handleStop(event) {
-    console.log('Recorder stopped: ', event);
-}
-
-function toggleRecording() {
-    if (ongoing == false) {
-        startRecording();
-        ongoing = true;
-        console.log("Hi");
-    } else {
-        stopRecording();
-        ongoing = false;
-        console.log("bye");
-    }
-}
-
-function startRecording() {
-    recordedBlobs = [];
-    var options = {mimeType: 'audio/wav;codecs=vp9'};
-    if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-        console.log(options.mimeType + ' is not Supported');
-        options = {mimeType: 'audio/wav;codecs=vp8'};
-        if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-            console.log(options.mimeType + ' is not Supported');
-            options = {mimeType: 'audio/wav'};
-            if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-                console.log(options.mimeType + ' is not Supported');
-                options = {mimeType: ''};
-            }
-        }
-    }
-    try {
-        mediaRecorder = new MediaRecorder(window.stream, options);
-    } catch (e) {
-        console.error('Exception while creating MediaRecorder: ' + e);
-        alert('Exception while creating MediaRecorder: '
-              + e + '. mimeType: ' + options.mimeType);
-        return;
-    }
-    console.log('Created MediaRecorder', mediaRecorder, 'with options', options);
-    ongoing = false;
-    mediaRecorder.onstop = handleStop;
-    mediaRecorder.ondataavailable = handleDataAvailable;
-    mediaRecorder.start(10); // collect 10ms of data
-    console.log('MediaRecorder started', mediaRecorder);
-}
-
-function stopRecording() {
-    mediaRecorder.stop();
-    console.log('Recorded Blobs: ', recordedBlobs);
-    recordedVideo.controls = true;
-}
-
-function play() {
-    // workaround for non-seekable video taken from
-    // https://bugs.chromium.org/p/chromium/issues/detail?id=642012#c23
-    var superBuffer = new Blob(recordedBlobs, {type: 'audio/wav'});
-    recordedVideo.src = window.URL.createObjectURL(superBuffer);
-    recordedVideo.addEventListener('loadedmetadata', function() {
-        if (recordedVideo.duration === Infinity) {
-            recordedVideo.currentTime = 1e101;
-            recordedVideo.ontimeupdate = function() {
-                recordedVideo.currentTime = 0;
-                recordedVideo.ontimeupdate = function() {
-                    delete recordedVideo.ontimeupdate;
-                    var playPromise = recordedVideo.play();
-                    if (playPromise !== undefined) {
-                        playPromise.then(_ => {
-                            // Automatic playback started!
-                            // Show playing UI.
-                            video.pause();
-                        })
-                            .catch(error => {
-                            // Auto-play was prevented
-                            // Show paused UI.
-                        });
-                    }
-                };
-            };
-        }
-    });
-}
-function download() {
-    var blob = new Blob(recordedBlobs, {type: ''});
-    var url = window.URL.createObjectURL(blob);
-    var a = document.createElement('a');
-    a.style.display = 'none';
-    a.href = url;
-    a.download = 'test.webm';
-    document.body.appendChild(a);
-    a.click();
-    setTimeout(function() {
-        document.body.removeChild(a);
-        window.URL.revokeObjectURL(url);
-    }, 100);
-}
 
 var flying = false;
 function toggleFlying(){
@@ -183,8 +46,8 @@ var idz;
 function moveUp() {
     var elem = document.getElementById("up");
     var pos = 60;
-    var size = 55;
-    var wen = 23;
+    var size = 40;
+    var wen = 29;
     var minspeed = Math.ceil(7);
     var maxspeed = Math.floor(25);
     var randomspeed = Math.floor(Math.random()*(maxspeed-minspeed+1))+minspeed;
@@ -192,8 +55,8 @@ function moveUp() {
     function frame() {
         if (pos == -20) {
             pos = 60;
-            size = 55;
-            wen = 23;
+            size = 40;
+            wen = 29;
             elem.style.top = pos + '%';
             elem.style.width = size + '%';
             elem.style.left = wen + '%';
@@ -211,8 +74,8 @@ function moveUp() {
 function moveUpz() {
     var elem = document.getElementById("upz");
     var pos = 60;
-    var size = 55;
-    var wen = 23;
+    var size = 40;
+    var wen = 29;
     var minspeed = Math.ceil(7);
     var maxspeed = Math.floor(25);
     var randomspeed = Math.floor(Math.random()*(maxspeed-minspeed+1))+minspeed;
@@ -220,8 +83,8 @@ function moveUpz() {
     function frame() {
         if (pos == -20) {
             pos = 60;
-            size = 55;
-            wen = 23;
+            size = 40;
+            wen = 29;
             elem.style.top = pos + '%';
             elem.style.width = size + '%';
             elem.style.left = wen + '%';
@@ -240,11 +103,11 @@ function createimagecenter(){
     var x = document.createElement("IMG");
     x.setAttribute("src", "circle.png");
     x.setAttribute("id", "ups");
-    x.setAttribute("onclick", "play(); toggleFlying(); start()");
+    x.setAttribute("onclick", "toggleFlying(); start()");
     x.style.top = "63%";
     x.style.position = "fixed";
-    x.style.width = "55%";
-    x.style.left = "23%";
+    x.style.width = "40%";
+    x.style.left = "29%";
     document.body.appendChild(x);
 }
 
@@ -255,18 +118,18 @@ jQuery.fn.shake = function () {
         });
         for (var x = 1; x <= 99999; x++) {
             $(this).animate({
-                top: 40,
+                top: 10,
                 left:-6.5
-            }, 110).animate({
-                top: 55,
+            }, 15).animate({
+                top: 25,
                 left:-6.5
-            }, 310).animate({
-                top: 55,
+            }, 35).animate({
+                top: 25,
                 left:-6.5
-            }, 110).animate({
-                top: 40,
+            }, 15).animate({
+                top: 10,
                 left:-6.5
-            }, 310);
+            }, 35);
         }
     });
 
@@ -277,12 +140,30 @@ function start() {
 
 };
 
+function playMusic(){
+    // Audio Loop Limit
+    var loopLimit = 4;
+    var loopCounter = 0;
+    var vol = 1.0;
+    var aud = document.getElementById("recorded");
+    aud.play();
+    document.getElementById("recorded").addEventListener('ended', function(){
+        if (loopCounter < loopLimit){
+            this.currentTime = 0;
+            this.play();
+            aud.volume = vol;
+            vol = vol * .5;
+            loopCounter++;
+        }
+    }, false);
+}
+
 var larged = false;
 function sizeUp() {
     var elem = document.getElementById("down");
-    var pos = 87;
-    var size = 55;
-    var leftPos = 25;
+    var pos = 100;
+    var size = 31;
+    var leftPos = 33;
     if(larged == false){
         var id = setInterval(frame, 5);
         function frame() {
@@ -291,7 +172,7 @@ function sizeUp() {
             elem.style.top = pos + '%';
             elem.style.width = size + '%';
             elem.style.left = leftPos + '%';
-            if (size == 58) {
+            if (size == 36) {
                 clearInterval(id);
             }
             larged = true;
@@ -299,8 +180,8 @@ function sizeUp() {
     }
     else
     {
-        size=58;
-        leftPos= 23.5;
+        size=36;
+        leftPos= 31.5;
         var id = setInterval(frame, 5);
         function frame() {
             size--;
@@ -308,7 +189,7 @@ function sizeUp() {
             //elem.style.top = pos + '%';
             elem.style.width = size + '%';
             elem.style.left = leftPos + '%';
-            if (size == 55) {
+            if (size == 30) {
                 clearInterval(id);
             }
             larged = false;

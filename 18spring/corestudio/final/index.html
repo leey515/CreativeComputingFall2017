@@ -24,18 +24,26 @@
         <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="main.css">
 
+        <style>
+
+        </style>
+
     </head>
 
     <body>
-        <div class="overlay"></div>
-        
+
         <div id="container">
-            <video id="recorded" controls></video>
+            <audio id="recorded" controls></audio><!---player--->
         </div>
 
-        <img id="down" class="down" src="banwon.png" onclick="toggleRecording(); sizeUp()">
-        <img id="up" class="up" src="circle.png" onclick="play(); toggleFlying(); start()">
-        <img id="upz" class="up" src="circle.png" onclick="play(); toggleFlying(); start()">
+        <div class="top" id="down" onclick="sizeUp()">
+            <input class="top" type="file" accept="audio/*" capture id="recorder">
+
+        </div> <!---recording-------->
+        
+        <!---<img id="down" class="down" src="banwon.png" >     ---->   
+        <img id="up" class="up" src="circle.png" onclick="playMusic(); toggleFlying(); start()">
+        <img id="upz" class="up" src="circle.png" onclick="playMusic(); toggleFlying(); start()">
 
 
         <img id="imgback" class="imgback" src="background.jpg" alt="Pineapple">
